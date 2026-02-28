@@ -1,11 +1,31 @@
 	object_const_def
 	const ICEPATHB3F_POKE_BALL
 	const ICEPATHB3F_ROCK
+	const ICEPATHB3F_ARTICUNO
 
 IcePathB3F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+IcePathB3FArticuno:
+	faceplayer
+	opentext
+	writetext ArticunoText
+	cry ARTICUNO
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon ARTICUNO, 50
+	startbattle
+	disappear ICEPATHB3F_ARTICUNO
+	setevent EVENT_FOUGHT_ARTICUNO
+	reloadmapafterbattle
+	end
+
+ArticunoText:
+	text "Gyaoo!"
+	done
 
 IcePathB3FNevermeltice:
 	itemball NEVERMELTICE
@@ -27,3 +47,4 @@ IcePathB3F_MapEvents:
 	def_object_events
 	object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE
 	object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1
+	object_event  9,  3, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePathB3FArticuno, EVENT_FOUGHT_ARTICUNO

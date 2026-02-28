@@ -1,3 +1,6 @@
+	object_const_def
+	const SILVERCAVEOUTSIDE_MOLTRES
+
 SilverCaveOutside_MapScripts:
 	def_scene_scripts
 
@@ -7,6 +10,25 @@ SilverCaveOutside_MapScripts:
 SilverCaveOutsideFlypointCallback:
 	setflag ENGINE_FLYPOINT_SILVER_CAVE
 	endcallback
+
+SilverCaveOutsideMoltres:
+	faceplayer
+	opentext
+	writetext MoltresText
+	cry MOLTRES
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon MOLTRES, 50
+	startbattle
+	disappear SILVERCAVEOUTSIDE_MOLTRES
+	setevent EVENT_FOUGHT_MOLTRES
+	reloadmapafterbattle
+	end
+
+MoltresText:
+	text "Gyaoo!"
+	done
 
 MtSilverPokecenterSign:
 	jumpstd PokecenterSignScript
@@ -36,3 +58,4 @@ SilverCaveOutside_MapEvents:
 	bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
+	object_event 14, 15, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideMoltres, EVENT_FOUGHT_MOLTRES

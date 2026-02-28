@@ -257,9 +257,23 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
+	const MOONBLAST    ; fc
+	const PLAY_ROUGH   ; fd
+	const DAZZLING_GLEAM ; fe
+	const DRAINING_KISS ; ff
+	const FAIRY_WIND   ; 100
+	const DISARMING_VOICE ; 101
+	const FLOWER_SHIELD ; 102
+	const FAIRY_LOCK   ; 103
+	const BABY_DOLL_EYES ; 104
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff
+
+; Move categories for physical/special split
+DEF CATEGORY_PHYSICAL EQU 0
+DEF CATEGORY_SPECIAL  EQU 1
+DEF CATEGORY_STATUS   EQU 2
 
 ; Battle animations use the same constants as the moves up to this point
 	const_next $ff

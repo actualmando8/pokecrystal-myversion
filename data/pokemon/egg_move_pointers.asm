@@ -251,4 +251,39 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw NoEggMoves ; SYLVEON
+	dw NoEggMoves ; ELECTIVIRE
+	dw NoEggMoves ; MAGMORTAR
+	dw NoEggMoves ; RHYPERIOR
+	dw NoEggMoves ; TOGEKISS
+	dw NoEggMoves ; MAMOSWINE
+	dw NoEggMoves ; PORYGON_Z
+	dw NoEggMoves ; AMBIPOM
+	dw NoEggMoves ; HONCHKROW
+	dw NoEggMoves ; MISMAGIUS
+	dw NoEggMoves ; WEAVILE
+	dw NoEggMoves ; BONSLY
+	dw NoEggMoves ; MUNCHLAX
+	dw NoEggMoves ; LEAFEON
+	dw NoEggMoves ; GLACEON
+	dw NoEggMoves ; WYNAUT
+	dw NoEggMoves ; MAGNEZONE
+	dw NoEggMoves ; ANNIHILAPE
+	dw NoEggMoves ; AZURILL
+	dw NoEggMoves ; CLODSIRE
+	dw NoEggMoves ; CORSOLA_G
+	dw NoEggMoves ; CURSOLA
+	dw NoEggMoves ; DUDUNSPARCE
+	dw NoEggMoves ; FARIGIRAF
+	dw NoEggMoves ; GLISCOR
+	dw NoEggMoves ; KLEAVOR
+	dw NoEggMoves ; LICKILICKY
+	dw NoEggMoves ; MANTYKE
+	dw NoEggMoves ; MIME_JR
+	dw NoEggMoves ; NINETALES_A
+	dw NoEggMoves ; OVERQWIL
+	dw NoEggMoves ; VULPIX_A
+	dw NoEggMoves ; WOOPER_P
+	dw NoEggMoves ; WYRDEER
+	dw NoEggMoves ; YANMEGA
 	assert_table_length NUM_POKEMON

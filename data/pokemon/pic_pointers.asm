@@ -254,6 +254,41 @@ PokemonPicPointers::
 	dba_pics LugiaFrontpic, LugiaBackpic
 	dba_pics HoOhFrontpic, HoOhBackpic
 	dba_pics CelebiFrontpic, CelebiBackpic
+	dba_pics SylveonFrontpic, SylveonBackpic
+	dba_pics ElectivireFrontpic, ElectivireBackpic
+	dba_pics MagmortarFrontpic, MagmortarBackpic
+	dba_pics RhyperiorFrontpic, RhyperiorBackpic
+	dba_pics TogekissFrontpic, TogekissBackpic
+	dba_pics MamoswineFrontpic, MamoswineBackpic
+	dba_pics PorygonZFrontpic, PorygonZBackpic
+	dba_pics AmbipomFrontpic, AmbipomBackpic
+	dba_pics HonchkrowFrontpic, HonchkrowBackpic
+	dba_pics MismagiusFrontpic, MismagiusBackpic
+	dba_pics WeavileFrontpic, WeavileBackpic
+	dba_pics BonslyFrontpic, BonslyBackpic
+	dba_pics MunchlaxFrontpic, MunchlaxBackpic
+	dba_pics LeafeonFrontpic, LeafeonBackpic
+	dba_pics GlaceonFrontpic, GlaceonBackpic
+	dba_pics WynautFrontpic, WynautBackpic
+	dba_pics MagnezoneFrontpic, MagnezoneBackpic
+	dba_pics AnnihilapeFrontpic, AnnihilapeBackpic
+	dba_pics AzurillFrontpic, AzurillBackpic
+	dba_pics ClodsireFrontpic, ClodsireBackpic
+	dba_pics CorsolaGFrontpic, CorsolaGBackpic
+	dba_pics CursolaFrontpic, CursolaBackpic
+	dba_pics DudunsparceFrontpic, DudunsparceBackpic
+	dba_pics FarigirafFrontpic, FarigirafBackpic
+	dba_pics GliscorFrontpic, GliscorBackpic
+	dba_pics KleavorFrontpic, KleavorBackpic
+	dba_pics LickilickyFrontpic, LickilickyBackpic
+	dba_pics MantykeFrontpic, MantykeBackpic
+	dba_pics MimeJrFrontpic, MimeJrBackpic
+	dba_pics NinetalesAFrontpic, NinetalesABackpic
+	dba_pics OverqwilFrontpic, OverqwilBackpic
+	dba_pics VulpixAFrontpic, VulpixABackpic
+	dba_pics WooperPFrontpic, WooperPBackpic
+	dba_pics WyrdeerFrontpic, WyrdeerBackpic
+	dba_pics YanmegaFrontpic, YanmegaBackpic
 	assert_table_length NUM_POKEMON
 	dba_pics ; unused
 	dba_pics EggPic ; Egg has no back sprite

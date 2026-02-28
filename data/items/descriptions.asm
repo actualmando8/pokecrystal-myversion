@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw DuskStoneDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw ShinyStoneDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -1011,3 +1011,11 @@ TeruSama32Desc:
 
 TeruSama33Desc:
 	db   "?@"
+
+DuskStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+ShinyStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"

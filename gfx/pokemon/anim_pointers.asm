@@ -251,4 +251,39 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw SylveonAnimation
+	dw ElectivireAnimation
+	dw MagmortarAnimation
+	dw RhyperiorAnimation
+	dw TogekissAnimation
+	dw MamoswineAnimation
+	dw PorygonZAnimation
+	dw AmbipomAnimation
+	dw HonchkrowAnimation
+	dw MismagiusAnimation
+	dw WeavileAnimation
+	dw BonslyAnimation
+	dw MunchlaxAnimation
+	dw LeafeonAnimation
+	dw GlaceonAnimation
+	dw WynautAnimation
+	dw MagnezoneAnimation
+	dw AnnihilapeAnimation
+	dw AzurillAnimation
+	dw ClodsireAnimation
+	dw CorsolaGAnimation
+	dw CursolaAnimation
+	dw DudunsparceAnimation
+	dw FarigirafAnimation
+	dw GliscorAnimation
+	dw KleavorAnimation
+	dw LickilickyAnimation
+	dw MantykeAnimation
+	dw MimeJrAnimation
+	dw NinetalesAAnimation
+	dw OverqwilAnimation
+	dw VulpixAAnimation
+	dw WooperPAnimation
+	dw WyrdeerAnimation
+	dw YanmegaAnimation
 	assert_table_length NUM_POKEMON

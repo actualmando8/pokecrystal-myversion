@@ -2540,9 +2540,12 @@ PlayerAttackDamage:
 	ld d, a
 	ret z
 
+	ld hl, wPlayerMoveStructCategory
 	ld a, [hl]
-	cp SPECIAL
-	jr nc, .special
+	cp CATEGORY_SPECIAL
+	jr z, .special
+	cp CATEGORY_STATUS
+	ret z
 
 ; physical
 	ld hl, wEnemyMonDefense
@@ -2672,31 +2675,33 @@ CheckDamageStatsCritical:
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wPlayerMoveStructType]
-	cp SPECIAL
-; special
-	ld a, [wPlayerSAtkLevel]
-	ld b, a
-	ld a, [wEnemySDefLevel]
-	jr nc, .end
+	ld a, [wPlayerMoveStructCategory]
+	cp CATEGORY_SPECIAL
+	jr z, .player_special
 ; physical
 	ld a, [wPlayerAtkLevel]
 	ld b, a
 	ld a, [wEnemyDefLevel]
 	jr .end
+.player_special
+	ld a, [wPlayerSAtkLevel]
+	ld b, a
+	ld a, [wEnemySDefLevel]
+	jr .end
 
 .enemy
-	ld a, [wEnemyMoveStructType]
-	cp SPECIAL
-; special
-	ld a, [wEnemySAtkLevel]
-	ld b, a
-	ld a, [wPlayerSDefLevel]
-	jr nc, .end
+	ld a, [wEnemyMoveStructCategory]
+	cp CATEGORY_SPECIAL
+	jr z, .enemy_special
 ; physical
 	ld a, [wEnemyAtkLevel]
 	ld b, a
 	ld a, [wPlayerDefLevel]
+	jr .end
+.enemy_special
+	ld a, [wEnemySAtkLevel]
+	ld b, a
+	ld a, [wPlayerSDefLevel]
 .end
 	cp b
 	pop bc
@@ -2784,9 +2789,12 @@ EnemyAttackDamage:
 	and a
 	ret z
 
+	ld hl, wEnemyMoveStructCategory
 	ld a, [hl]
-	cp SPECIAL
-	jr nc, .special
+	cp CATEGORY_SPECIAL
+	jr z, .special
+	cp CATEGORY_STATUS
+	ret z
 
 ; physical
 	ld hl, wBattleMonDefense

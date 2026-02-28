@@ -172,6 +172,16 @@ AddHallOfFameEntry:
 		"sGSBallFlagBackup is no longer located at 01:be44."
 	vc_assert GS_BALL_AVAILABLE == $b, \
 		"GS_BALL_AVAILABLE is no longer equal to $b."
+; Enable GS Ball event for all versions (not just VC)
+	ld a, BANK(sGSBallFlag)
+	call OpenSRAM
+	ld a, GS_BALL_AVAILABLE
+	ld [sGSBallFlag], a
+	ld a, BANK(sGSBallFlagBackup)
+	call OpenSRAM
+	ld a, GS_BALL_AVAILABLE
+	ld [sGSBallFlagBackup], a
+	call CloseSRAM
 	ret
 
 SaveGameData:

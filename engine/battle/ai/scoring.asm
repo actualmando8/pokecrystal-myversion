@@ -1347,9 +1347,9 @@ AI_Smart_Counter:
 	and a
 	jr z, .skipmove
 
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	jr nc, .skipmove
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+	cp CATEGORY_PHYSICAL
+	jr nz, .skipmove
 
 	inc b
 
@@ -1375,9 +1375,9 @@ AI_Smart_Counter:
 	and a
 	jr z, .done
 
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	jr nc, .done
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+	cp CATEGORY_PHYSICAL
+	jr nz, .done
 
 .encourage
 	call Random
@@ -2532,9 +2532,9 @@ AI_Smart_MirrorCoat:
 	and a
 	jr z, .skipmove
 
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	jr c, .skipmove
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+	cp CATEGORY_SPECIAL
+	jr nz, .skipmove
 
 	inc b
 
@@ -2560,9 +2560,9 @@ AI_Smart_MirrorCoat:
 	and a
 	jr z, .done
 
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
-	jr c, .done
+	ld a, [wEnemyMoveStruct + MOVE_CATEGORY]
+	cp CATEGORY_SPECIAL
+	jr nz, .done
 
 .encourage
 	call Random

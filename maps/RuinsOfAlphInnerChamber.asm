@@ -2,6 +2,7 @@
 	const RUINSOFALPHINNERCHAMBER_FISHER
 	const RUINSOFALPHINNERCHAMBER_TEACHER
 	const RUINSOFALPHINNERCHAMBER_GRAMPS
+	const RUINSOFALPHINNERCHAMBER_MEW
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -26,6 +27,25 @@ RuinsOfAlphInnerChamberStrangePresenceScript:
 	setevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	end
+
+RuinsOfAlphInnerChamberMew:
+	faceplayer
+	opentext
+	writetext MewText
+	cry MEW
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon MEW, 30
+	startbattle
+	disappear RUINSOFALPHINNERCHAMBER_MEW
+	setevent EVENT_FOUGHT_MEW
+	reloadmapafterbattle
+	end
+
+MewText:
+	text "Mew?"
+	done
 
 RuinsOfAlphInnerChamberFisherScript:
 	jumptextfaceplayer RuinsOfAlphInnerChamberFisherText
@@ -122,3 +142,4 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event  3,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberFisherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
+	object_event 10,  3, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMew, EVENT_FOUGHT_MEW

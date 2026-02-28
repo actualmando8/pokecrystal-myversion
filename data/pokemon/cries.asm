@@ -257,9 +257,39 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	mon_cry CRY_VENONAT,      90,  320 ; SYLVEON
+	mon_cry CRY_VOLTORB,     100,  416 ; ELECTIVIRE
+	mon_cry CRY_CHARMANDER,  220,  200 ; MAGMORTAR
+	mon_cry CRY_RHYDON,      -32,  288 ; RHYPERIOR
+	mon_cry CRY_TOGETIC,      20,   80 ; TOGEKISS
+	mon_cry CRY_MAGCARGO,   -300,  288 ; MAMOSWINE
+	mon_cry CRY_GIRAFARIG,    80,  608 ; PORYGON_Z
+	mon_cry CRY_AIPOM,      -120,  264 ; AMBIPOM
+	mon_cry CRY_MARILL,      -60,  416 ; HONCHKROW
+	mon_cry CRY_HOOTHOOT,    270,  264 ; MISMAGIUS
+	mon_cry CRY_WOOPER,       40,  200 ; WEAVILE
+	mon_cry CRY_CLEFAIRY,   -100,  240 ; BONSLY
+	mon_cry CRY_SNORLAX,     120,  320 ; MUNCHLAX
+	mon_cry CRY_VENONAT,     150,  280 ; LEAFEON
+	mon_cry CRY_VENONAT,    -150,  280 ; GLACEON
+	mon_cry CRY_WOBBUFFET,   200,  360 ; WYNAUT
+	mon_cry CRY_MAGNETON,   -100,  200 ; MAGNEZONE
+	mon_cry CRY_PRIMEAPE,    -80,  240 ; ANNIHILAPE
+	mon_cry CRY_MARILL,      200,  400 ; AZURILL
+	mon_cry CRY_QUAGSIRE,   -120,  280 ; CLODSIRE
+	mon_cry CRY_CORSOLA,    -200,  200 ; CORSOLA_G
+	mon_cry CRY_CORSOLA,    -250,  160 ; CURSOLA
+	mon_cry CRY_DUNSPARCE,   -60,  320 ; DUDUNSPARCE
+	mon_cry CRY_GIRAFARIG,   -40,  280 ; FARIGIRAF
+	mon_cry CRY_GLIGAR,     -100,  240 ; GLISCOR
+	mon_cry CRY_SCYTHER,    -150,  200 ; KLEAVOR
+	mon_cry CRY_LICKITUNG,  -120,  280 ; LICKILICKY
+	mon_cry CRY_MANTINE,     180,  320 ; MANTYKE
+	mon_cry CRY_CLEFAIRY,    150,  300 ; MIME_JR
+	mon_cry CRY_NINETALES,  -180,  240 ; NINETALES_A
+	mon_cry CRY_QWILFISH,   -100,  220 ; OVERQWIL
+	mon_cry CRY_VULPIX,      180,  280 ; VULPIX_A
+	mon_cry CRY_WOOPER,       80,  240 ; WOOPER_P
+	mon_cry CRY_STANTLER,    -80,  260 ; WYRDEER
+	mon_cry CRY_YANMA,      -120,  240 ; YANMEGA
 	assert_table_length NUM_POKEMON
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 252
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 253
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
-	assert_table_length $ff

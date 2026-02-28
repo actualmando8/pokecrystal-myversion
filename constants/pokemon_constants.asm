@@ -271,9 +271,44 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const SYLVEON    ; fc
+	const ELECTIVIRE ; fd
+	const MAGMORTAR  ; fe
+	const RHYPERIOR  ; ff
+	const TOGEKISS   ; 100
+	const MAMOSWINE  ; 101
+	const PORYGON_Z  ; 102
+	const AMBIPOM    ; 103
+	const HONCHKROW  ; 104
+	const MISMAGIUS  ; 105
+	const WEAVILE    ; 106
+	const BONSLY     ; 107
+	const MUNCHLAX   ; 108
+	const LEAFEON    ; 109
+	const GLACEON    ; 10a
+	const WYNAUT     ; 10b
+	const MAGNEZONE  ; 10c
+	const ANNIHILAPE ; 10d
+	const AZURILL    ; 10e
+	const CLODSIRE   ; 10f
+	const CORSOLA_G  ; 110
+	const CURSOLA    ; 111
+	const DUDUNSPARCE ; 112
+	const FARIGIRAF  ; 113
+	const GLISCOR    ; 114
+	const KLEAVOR    ; 115
+	const LICKILICKY ; 116
+	const MANTYKE    ; 117
+	const MIME_JR    ; 118
+	const NINETALES_A ; 119
+	const OVERQWIL   ; 11a
+	const VULPIX_A   ; 11b
+	const WOOPER_P   ; 11c
+	const WYRDEER    ; 11d
+	const YANMEGA    ; 11e
 DEF NUM_POKEMON EQU const_value - 1
-	const_skip       ; fc
-	const EGG        ; fd
+	const_skip       ; 11f
+	const EGG        ; 120
 
 ; Unown forms
 ; indexes for:

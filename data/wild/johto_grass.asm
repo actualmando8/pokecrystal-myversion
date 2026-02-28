@@ -1365,13 +1365,13 @@ JohtoGrassWildMons:
 	db 7, HOPPIP
 	db 7, HOPPIP
 	; nite
-	db 6, RATTATA
+	db 6, SPINARAK
 	db 6, ZUBAT
 	db 6, GEODUDE
-	db 6, ZUBAT
-	db 7, RATTATA
-	db 7, RATTATA
-	db 7, RATTATA
+	db 6, TEDDIURSA
+	db 7, SPINARAK
+	db 7, TEDDIURSA
+	db 7, TEDDIURSA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34
@@ -1436,23 +1436,23 @@ JohtoGrassWildMons:
 	db 4, LEDYBA
 	db 4, PIDGEY
 	db 5, BELLSPROUT
-	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
+	db 5, VULPIX
+	db 5, MEOWTH
+	db 6, VULPIX
 	db 6, PIDGEY
 	; day
 	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, MEOWTH
 	db 5, BELLSPROUT
-	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
+	db 5, VULPIX
+	db 5, MEOWTH
+	db 6, VULPIX
 	db 6, PIDGEY
 	; nite
 	db 4, SPINARAK
 	db 4, HOOTHOOT
 	db 5, BELLSPROUT
-	db 5, HOOTHOOT
+	db 5, MEOWTH
 	db 5, HOOTHOOT
 	db 5, GASTLY
 	db 5, GASTLY
@@ -1545,21 +1545,21 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, EKANS
+	db 13, MANKEY
 	db 14, SPEAROW
-	db 15, RATTATA
+	db 15, GROWLITHE
 	db 16, RATICATE
-	db 15, ARBOK
+	db 15, MANKEY
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, GROWLITHE
 	; day
-	db 13, EKANS
+	db 13, MANKEY
 	db 14, SPEAROW
-	db 15, RATTATA
+	db 15, GROWLITHE
 	db 16, RATICATE
-	db 15, ARBOK
+	db 15, MANKEY
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, GROWLITHE
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
@@ -1676,8 +1676,8 @@ JohtoGrassWildMons:
 	db 2, GEODUDE
 	db 2, RATTATA
 	db 3, GEODUDE
-	db 3, RATTATA
-	db 2, RATTATA
+	db 3, GLIGAR
+	db 2, GLIGAR
 	db 2, RATTATA
 	db 2, RATTATA
 	end_grass_wildmons

@@ -253,6 +253,15 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
+	dw BattleAnim_Moonblast
+	dw BattleAnim_PlayRough
+	dw BattleAnim_DazzlingGleam
+	dw BattleAnim_DrainingKiss
+	dw BattleAnim_FairyWind
+	dw BattleAnim_DisarmingVoice
+	dw BattleAnim_FlowerShield
+	dw BattleAnim_FairyLock
+	dw BattleAnim_BabyDollEyes
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_Dummy
 	dw BattleAnim_Dummy
@@ -4824,3 +4833,5 @@ BattleAnim_ShowMon_1:
 	anim_incobj 1
 	anim_wait 1
 	anim_ret
+
+INCLUDE "data/moves/fairy_animations.asm"
