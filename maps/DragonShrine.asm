@@ -220,6 +220,16 @@ DragonShrineElder1Script:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	writetext DragonShrineSymbolicDragonText
 	waitbutton
+	checkevent EVENT_GOT_TM60_DRAGON_PULSE
+	iftrue .GotDragonPulse
+	promptbutton
+	verbosegiveitem TM_DRAGON_PULSE
+	iffalse .NoRoomForDragonPulse
+	setevent EVENT_GOT_TM60_DRAGON_PULSE
+	writetext DragonShrineDragonPulseSpeech
+	waitbutton
+.GotDragonPulse:
+.NoRoomForDragonPulse:
 	closetext
 	end
 
@@ -530,6 +540,15 @@ DragonShrineSymbolicDragonText:
 
 	para "entrusted with"
 	line "one."
+	done
+
+DragonShrineDragonPulseSpeech:
+	text "And take this TM"
+	line "as well."
+	
+	para "It contains DRAGON"
+	line "PULSE, a powerful"
+	cont "dragon technique."
 	done
 
 DragonShrineClairsGrandfatherText:

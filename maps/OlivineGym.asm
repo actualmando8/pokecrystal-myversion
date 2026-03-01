@@ -10,6 +10,8 @@ OlivineGym_MapScripts:
 OlivineGymJasmineScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
 	writetext Jasmine_SteelTypeIntro
@@ -36,6 +38,30 @@ OlivineGymJasmineScript:
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext Jasmine_IronTailSpeech
+	waitbutton
+	checkevent EVENT_GOT_TM61_FLASH_CANNON
+	iftrue .GotFlashCannon
+	promptbutton
+	verbosegiveitem TM_FLASH_CANNON
+	iffalse .NoRoomForFlashCannon
+	setevent EVENT_GOT_TM61_FLASH_CANNON
+	writetext Jasmine_FlashCannonSpeech
+	waitbutton
+.GotFlashCannon:
+.NoRoomForFlashCannon:
+	closetext
+	end
+
+.Rematch:
+	writetext JasmineRematchText
+	waitbutton
+	closetext
+	winlosstext JasmineRematchWinText, 0
+	loadtrainer JASMINE, JASMINE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext JasmineRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -156,10 +182,59 @@ Jasmine_IronTailSpeech:
 	cont "IRON TAIL."
 	done
 
+Jasmine_FlashCannonSpeech:
+	text "…And this TM"
+	line "teaches FLASH"
+	cont "CANNON…"
+	
+	para "A special STEEL"
+	line "move…"
+	done
+
 Jasmine_GoodLuck:
 	text "Um… I don't know"
 	line "how to say this,"
 	cont "but good luck…"
+	done
+
+JasmineRematchText:
+	text "JASMINE: …Oh!"
+
+	para "…Thank you for"
+	line "coming to see me."
+
+	para "I heard you became"
+	line "the CHAMPION…"
+
+	para "That's wonderful."
+
+	para "…Um… My steel"
+	line "#MON and I have"
+
+	para "been training very"
+	line "hard too."
+
+	para "…May I battle you"
+	line "with all I have?"
+	done
+
+JasmineRematchWinText:
+	text "…You are a better"
+	line "trainer than me."
+	done
+
+JasmineRematchAfterText:
+	text "JASMINE: …Thank"
+	line "you very much."
+
+	para "Your skill and"
+	line "heart…"
+
+	para "They both shine so"
+	line "brightly."
+
+	para "…I will continue"
+	line "to do my best."
 	done
 
 OlivineGymGuideText:

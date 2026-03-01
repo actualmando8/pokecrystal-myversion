@@ -15,6 +15,8 @@ MahoganyGym_MapScripts:
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
 	writetext PryceText_Intro
@@ -46,6 +48,20 @@ MahoganyGymPryceScript:
 	iffalse MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext PryceText_IcyWindSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext PryceRematchText
+	waitbutton
+	closetext
+	winlosstext PryceRematchWinText, 0
+	loadtrainer PRYCE, PRYCE2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext PryceRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -236,6 +252,53 @@ PryceText_CherishYourPokemon:
 
 	para "Cherish your time"
 	line "together!"
+	done
+
+PryceRematchText:
+	text "PRYCE: Ah, so you"
+	line "have come."
+
+	para "I have been with"
+	line "#MON for many"
+	cont "decades."
+
+	para "I have seen much"
+	line "in my long life."
+
+	para "But few trainers"
+	line "have conquered the"
+	cont "ELITE FOUR."
+
+	para "Since I am your"
+	line "elder, let me show"
+
+	para "you the power I"
+	line "have cultivated."
+
+	para "I, PRYCE--the"
+	line "winter trainer--"
+
+	para "shall demonstrate"
+	line "my true strength!"
+	done
+
+PryceRematchWinText:
+	text "Ah…"
+	line "Magnificent."
+	done
+
+PryceRematchAfterText:
+	text "PRYCE: You and"
+	line "your #MON have"
+
+	para "experienced much"
+	line "together."
+
+	para "That bond you"
+	line "share…"
+
+	para "Cherish it always."
+	line "It is precious."
 	done
 
 BoarderRonaldSeenText:

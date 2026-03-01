@@ -21,6 +21,8 @@ GoldenrodGymNoop2Scene:
 
 GoldenrodGymWhitneyScript:
 	faceplayer
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
 	opentext
@@ -43,6 +45,21 @@ GoldenrodGymWhitneyScript:
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
 	writetext WhitneyYouMeanieText
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	opentext
+	writetext WhitneyRematchText
+	waitbutton
+	closetext
+	winlosstext WhitneyRematchWinText, 0
+	loadtrainer WHITNEY, WHITNEY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext WhitneyRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -260,6 +277,38 @@ WhitneyAttractText:
 	cont "like me?"
 	done
 
+WhitneyRematchText:
+	text "WHITNEY: Oh wow!"
+	line "It's the CHAMPION!"
+
+	para "Everyone's talking"
+	line "about how you beat"
+	cont "the ELITE FOUR!"
+
+	para "That's so cool!"
+
+	para "I've been training"
+	line "super-duper hard!"
+
+	para "My cute #MON"
+	line "are way stronger"
+	cont "now! Let's go!"
+	done
+
+WhitneyRematchWinText:
+	text "Waaah!"
+	line "You're so strong!"
+	done
+
+WhitneyRematchAfterText:
+	text "WHITNEY: Sniff…"
+	line "You're amazing!"
+
+	para "I'll train even"
+	line "harder with my"
+	cont "cute #MON!"
+	done
+
 WhitneyGoodCryText:
 	text "Ah, that was a"
 	line "good cry!"
@@ -363,12 +412,12 @@ GoldenrodGymGuideText:
 	line "making!"
 
 	para "This GYM is home"
-	line "to normal-type"
+	line "to fairy-type"
 	cont "#MON trainers."
 
 	para "I recommend you"
-	line "use fighting-type"
-	cont "#MON."
+	line "use poison-type or"
+	cont "steel-type #MON."
 	done
 
 GoldenrodGymGuideWinText:

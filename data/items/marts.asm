@@ -14,6 +14,7 @@ Marts:
 	dw MartGoldenrod5F2
 	dw MartGoldenrod5F3
 	dw MartGoldenrod5F4
+	dw MartGoldenrodEvolutionItems
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
@@ -30,6 +31,7 @@ Marts:
 	dw MartCeladon4F
 	dw MartCeladon5F1
 	dw MartCeladon5F2
+	dw MartCeladonEvolutionItems
 	dw MartFuchsia
 	dw MartSaffron
 	dw MartMtMoon
@@ -38,7 +40,8 @@ Marts:
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
-	db 4 ; # items
+	db 5 ; # items
+	db RARE_CANDY
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -46,7 +49,8 @@ MartCherrygrove:
 	db -1 ; end
 
 MartCherrygroveDex:
-	db 5 ; # items
+	db 6 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
@@ -55,7 +59,8 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
+	db 11 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db POTION
 	db ESCAPE_ROPE
@@ -69,7 +74,8 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db CHARCOAL
 	db POKE_BALL
 	db POTION
@@ -82,7 +88,8 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 6 ; # items
+	db RARE_CANDY
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -91,7 +98,8 @@ MartCianwood:
 	db -1 ; end
 
 MartGoldenrod2F1:
-	db 7 ; # items
+	db 8 ; # items
+	db RARE_CANDY
 	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
@@ -102,7 +110,8 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 8 ; # items
+	db 9 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
@@ -165,8 +174,23 @@ MartGoldenrod5F4:
 	db TM_ROCK_SMASH
 	db -1 ; end
 
+MartGoldenrodEvolutionItems:
+	db 10 ; # items
+	db FIRE_STONE
+	db WATER_STONE
+	db THUNDERSTONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
+	db SHINY_STONE
+	db DUSK_STONE
+	db KINGS_ROCK
+	db METAL_COAT
+	db -1 ; end
+
 MartOlivine:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -179,7 +203,8 @@ MartOlivine:
 	db -1 ; end
 
 MartEcruteak:
-	db 10 ; # items
+	db 11 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION
@@ -193,7 +218,8 @@ MartEcruteak:
 	db -1 ; end
 
 MartMahogany1:
-	db 4 ; # items
+	db 5 ; # items
+	db RARE_CANDY
 	db TINYMUSHROOM
 	db SLOWPOKETAIL
 	db POKE_BALL
@@ -201,7 +227,8 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db RAGECANDYBAR
 	db GREAT_BALL
 	db SUPER_POTION
@@ -214,7 +241,8 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -227,7 +255,8 @@ MartBlackthorn:
 	db -1 ; end
 
 MartViridian:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db ULTRA_BALL
 	db HYPER_POTION
 	db FULL_HEAL
@@ -240,7 +269,8 @@ MartViridian:
 	db -1 ; end
 
 MartPewter:
-	db 7 ; # items
+	db 8 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db SUPER_POTION
 	db SUPER_REPEL
@@ -251,7 +281,8 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
+	db 10 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -264,7 +295,8 @@ MartCerulean:
 	db -1 ; end
 
 MartLavender:
-	db 8 ; # items
+	db 9 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
@@ -276,7 +308,8 @@ MartLavender:
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
+	db 9 ; # items
+	db RARE_CANDY
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -288,7 +321,8 @@ MartVermilion:
 	db -1 ; end
 
 MartCeladon2F1:
-	db 7 ; # items
+	db 8 ; # items
+	db RARE_CANDY
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
@@ -299,7 +333,8 @@ MartCeladon2F1:
 	db -1 ; end
 
 MartCeladon2F2:
-	db 10 ; # items
+	db 11 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -348,8 +383,25 @@ MartCeladon5F2:
 	db X_SPECIAL
 	db -1 ; end
 
+MartCeladonEvolutionItems:
+	db 12 ; # items
+	db FIRE_STONE
+	db WATER_STONE
+	db THUNDERSTONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
+	db SHINY_STONE
+	db DUSK_STONE
+	db KINGS_ROCK
+	db METAL_COAT
+	db DRAGON_SCALE
+	db UP_GRADE
+	db -1 ; end
+
 MartFuchsia:
-	db 7 ; # items
+	db 8 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -360,7 +412,8 @@ MartFuchsia:
 	db -1 ; end
 
 MartSaffron:
-	db 8 ; # items
+	db 9 ; # items
+	db RARE_CANDY
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -372,7 +425,8 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 6 ; # items
+	db 7 ; # items
+	db RARE_CANDY
 	db POKE_DOLL
 	db FRESH_WATER
 	db SODA_POP
@@ -382,7 +436,8 @@ MartMtMoon:
 	db -1 ; end
 
 MartIndigoPlateau:
-	db 7 ; # items
+	db 8 ; # items
+	db RARE_CANDY
 	db ULTRA_BALL
 	db MAX_REPEL
 	db HYPER_POTION
@@ -393,7 +448,8 @@ MartIndigoPlateau:
 	db -1 ; end
 
 MartUnderground:
-	db 4 ; # items
+	db 5 ; # items
+	db RARE_CANDY
 	db ENERGYPOWDER
 	db ENERGY_ROOT
 	db HEAL_POWDER
@@ -401,7 +457,8 @@ MartUnderground:
 	db -1 ; end
 
 DefaultMart:
-	db 2 ; # items
+	db 3 ; # items
+	db RARE_CANDY
 	db POKE_BALL
 	db POTION
 	db -1 ; end

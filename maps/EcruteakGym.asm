@@ -24,6 +24,8 @@ EcruteakGymNoopScene:
 EcruteakGymMortyScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
 	writetext MortyIntroText
@@ -57,6 +59,20 @@ EcruteakGymMortyScript:
 	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetext MortyText_ShadowBallSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext MortyRematchText
+	waitbutton
+	closetext
+	winlosstext MortyRematchWinText, 0
+	loadtrainer MORTY, MORTY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext MortyRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -272,6 +288,50 @@ MortyFightDoneText:
 
 	para "I envy you for"
 	line "that…"
+	done
+
+MortyRematchText:
+	text "MORTY: Good of you"
+	line "to have come."
+
+	para "I foresaw your"
+	line "arrival. The"
+
+	para "CHAMPION who"
+	line "conquered the"
+	cont "ELITE FOUR."
+
+	para "My ghost #MON"
+	line "and I have trained"
+
+	para "in secret, seeking"
+	line "enlightenment."
+
+	para "Show me what you"
+	line "have learned on"
+	cont "your journey."
+	done
+
+MortyRematchWinText:
+	text "I see…"
+	line "This was destined."
+	done
+
+MortyRematchAfterText:
+	text "MORTY: You have"
+	line "witnessed much."
+
+	para "Your experiences"
+	line "have taken you to"
+
+	para "places I can only"
+	line "see in my visions."
+
+	para "Perhaps one day,"
+	line "our paths will"
+
+	para "lead us both to"
+	line "the rainbow #MON."
 	done
 
 SageJeffreySeenText:

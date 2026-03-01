@@ -17,6 +17,8 @@ CianwoodGym_MapScripts:
 CianwoodGymChuckScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
 	writetext ChuckIntroText1
@@ -62,6 +64,20 @@ CianwoodGymChuckScript:
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext ChuckRematchText
+	waitbutton
+	closetext
+	winlosstext ChuckRematchWinText, 0
+	loadtrainer CHUCK, CHUCK2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext ChuckRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -236,6 +252,36 @@ ChuckAfterText:
 	para "From now on, I'm"
 	line "going to train 24"
 	cont "hours a day!"
+	done
+
+ChuckRematchText:
+	text "CHUCK: WAHAHAH!"
+	line "The CHAMPION!"
+
+	para "I heard you beat"
+	line "the ELITE FOUR!"
+
+	para "My fighting #-"
+	line "MON and I have"
+	cont "trained non-stop!"
+
+	para "We're stronger"
+	line "than ever! Let's"
+	cont "battle!"
+	done
+
+ChuckRematchWinText:
+	text "WAHAHAH!"
+	line "You're too strong!"
+	done
+
+ChuckRematchAfterText:
+	text "CHUCK: Your power"
+	line "is incredible!"
+
+	para "I'll keep training"
+	line "to reach your"
+	cont "level! WAHAHAH!"
 	done
 
 BlackbeltYoshiSeenText:

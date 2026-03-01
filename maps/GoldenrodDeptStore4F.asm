@@ -3,6 +3,7 @@
 	const GOLDENRODDEPTSTORE4F_COOLTRAINER_M
 	const GOLDENRODDEPTSTORE4F_BUG_CATCHER
 	const GOLDENRODDEPTSTORE4F_GAMEBOY_KID
+	const GOLDENRODDEPTSTORE4F_CLERK2
 
 GoldenrodDeptStore4F_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,13 @@ GoldenrodDeptStore4FClerkScript:
 	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_4F
+	closetext
+	end
+
+GoldenrodDeptStore4FEvolutionItemsClerkScript:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_EVOLUTION_ITEMS
 	closetext
 	end
 
@@ -91,6 +99,7 @@ GoldenrodDeptStore4F_MapEvents:
 
 	def_object_events
 	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FClerkScript, -1
+	object_event  5,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FEvolutionItemsClerkScript, -1
 	object_event 11,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FCooltrainerMScript, -1
 	object_event  7,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FBugCatcherScript, -1
 	object_event  5,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore4FGameboyKidScript, -1

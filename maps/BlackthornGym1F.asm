@@ -30,7 +30,7 @@ BlackthornGymClairScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_RISINGBADGE
-	iftrue .AlreadyGotBadge
+	iftrue .Rematch
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .FightDone
 	writetext ClairIntroText
@@ -53,6 +53,20 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
+	end
+
+.Rematch:
+	writetext ClairRematchText
+	waitbutton
+	closetext
+	winlosstext ClairRematchWinText, 0
+	loadtrainer CLAIR, CLAIR2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext ClairRematchAfterText
+	waitbutton
+	closetext
 	end
 
 .FightDone:
@@ -220,6 +234,48 @@ ClairText_TooMuchToExpect:
 
 	para "Is it too much to"
 	line "expect of you?"
+	done
+
+ClairRematchText:
+	text "CLAIR: I am CLAIR."
+
+	para "So you're the one"
+	line "who conquered the"
+	cont "ELITE FOUR."
+
+	para "I can hold my own"
+	line "against even the"
+	cont "ELITE FOUR."
+
+	para "My dragon #MON"
+	line "are the strongest"
+	cont "in the world."
+
+	para "As a GYM LEADER,"
+	line "I will use my full"
+
+	para "power against you!"
+	line "Prepare yourself!"
+	done
+
+ClairRematchWinText:
+	text "…I lost again?"
+
+	para "This can't be…"
+	done
+
+ClairRematchAfterText:
+	text "CLAIR: …Fine."
+
+	para "I admit it."
+	line "You're strong."
+
+	para "But don't think"
+	line "this means I've"
+
+	para "given up! I'll"
+	line "keep training my"
+	cont "dragons!"
 	done
 
 BlackthornGymClairText_YouKeptMeWaiting:

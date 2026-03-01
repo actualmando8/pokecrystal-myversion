@@ -97,6 +97,9 @@ VictoryRoadRivalNext:
 VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 
+VictoryRoadTMStealthRock:
+	itemball TM_STEALTH_ROCK
+
 VictoryRoadMaxRevive:
 	itemball MAX_REVIVE
 

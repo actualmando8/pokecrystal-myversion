@@ -6786,3 +6786,13 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+INCLUDE "engine/battle/move_effects/burn.asm"
+
+INCLUDE "engine/battle/move_effects/attack_speed_up.asm"
+
+INCLUDE "engine/battle/move_effects/close_combat.asm"
+
+INCLUDE "engine/battle/move_effects/stealth_rock.asm"
+
+INCLUDE "engine/battle/move_effects/knock_off.asm"

@@ -1323,6 +1323,8 @@ GengarEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
 	db 39, DREAM_EATER
+	db 42, SHADOW_CLAW
+	db 45, WILL_O_WISP
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
 
@@ -1826,8 +1828,10 @@ GyaradosEvosAttacks:
 	db 30, LEER
 	db 35, TWISTER
 	db 40, HYDRO_PUMP
-	db 45, RAIN_DANCE
-	db 50, HYPER_BEAM
+	db 45, DRAGON_PULSE
+	db 48, DRAGON_DANCE
+	db 50, RAIN_DANCE
+	db 55, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LaprasEvosAttacks:
@@ -1841,6 +1845,8 @@ LaprasEvosAttacks:
 	db 29, PERISH_SONG
 	db 36, ICE_BEAM
 	db 43, RAIN_DANCE
+	db 45, SCALD
+	db 46, ICICLE_CRASH
 	db 50, SAFEGUARD
 	db 57, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2637,6 +2643,8 @@ ESPEONEvosAttacks:
 UMBREONEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DARK_PULSE
+	db 38, KNOCK_OFF
+	db 42, DARK_PULSE
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -2647,6 +2655,8 @@ MurkrowEvosAttacks:
 	db 16, HAZE
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
+	db 35, KNOCK_OFF
+	db 38, DARK_PULSE
 	db 41, MEAN_LOOK
 	db 0 ; no more level-up moves
 
@@ -3348,6 +3358,7 @@ MagmortarEvosAttacks:
 	db 25, SMOKESCREEN
 	db 33, SUNNY_DAY
 	db 41, FLAMETHROWER
+	db 43, WILL_O_WISP
 	db 49, CONFUSE_RAY
 	db 57, FIRE_BLAST
 	db 0 ; no more level-up moves
@@ -3363,6 +3374,7 @@ RhyperiorEvosAttacks:
 	db 19, FURY_ATTACK
 	db 31, SCARY_FACE
 	db 37, HORN_DRILL
+	db 40, STEALTH_ROCK
 	db 54, TAKE_DOWN
 	db 65, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -3380,6 +3392,7 @@ TogekissEvosAttacks:
 	db 31, SAFEGUARD
 	db 38, DOUBLE_EDGE
 	db 45, PLAY_ROUGH
+	db 48, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 MamoswineEvosAttacks:
@@ -3393,6 +3406,7 @@ MamoswineEvosAttacks:
 	db 28, TAKE_DOWN
 	db 33, FURY_ATTACK
 	db 42, MIST
+	db 44, ICICLE_CRASH
 	db 45, ANCIENTPOWER
 	db 56, BLIZZARD
 	db 70, AMNESIA
@@ -3436,8 +3450,11 @@ HonchkrowEvosAttacks:
 	db 16, HAZE
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
+	db 35, KNOCK_OFF
 	db 41, MEAN_LOOK
-	db 50, SUCKER_PUNCH
+	db 44, DARK_PULSE
+	db 50, BRAVE_BIRD
+	db 55, SUCKER_PUNCH
 	db 0 ; no more level-up moves
 
 MismagiusEvosAttacks:
@@ -3450,6 +3467,8 @@ MismagiusEvosAttacks:
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
 	db 36, PAIN_SPLIT
+	db 40, SHADOW_CLAW
+	db 43, WILL_O_WISP
 	db 46, PERISH_SONG
 	db 55, SHADOW_BALL
 	db 0 ; no more level-up moves
@@ -3463,8 +3482,11 @@ WeavileEvosAttacks:
 	db 17, SCREECH
 	db 25, FAINT_ATTACK
 	db 33, FURY_SWIPES
+	db 36, KNOCK_OFF
 	db 38, ICE_SHARD
+	db 40, DARK_PULSE
 	db 41, AGILITY
+	db 44, ICICLE_CRASH
 	db 49, SLASH
 	db 57, BEAT_UP
 	db 65, METAL_CLAW
@@ -3550,6 +3572,7 @@ MagnezoneEvosAttacks:
 	db 1, SONICBOOM
 	db 1, MIRROR_SHOT
 	db 6, THUNDERSHOCK
+	db 42, FLASH_CANNON
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE

@@ -266,6 +266,22 @@
 	const FLOWER_SHIELD ; 102
 	const FAIRY_LOCK   ; 103
 	const BABY_DOLL_EYES ; 104
+	const WILL_O_WISP  ; 105
+	const DRAGON_DANCE ; 106
+	const CLOSE_COMBAT ; 107
+	const BRAVE_BIRD   ; 108
+	const SCALD        ; 109
+	const U_TURN       ; 10a
+	const STEALTH_ROCK ; 10b
+	const KNOCK_OFF    ; 10c
+	const SHADOW_CLAW  ; 10d
+	const DARK_PULSE   ; 10e
+	const FLASH_CANNON ; 10f
+	const DRAGON_PULSE ; 110
+	const BUG_BUZZ     ; 111
+	const ICICLE_CRASH ; 112
+	const SLUDGE_WAVE  ; 113
+	const POISON_JAB   ; 114
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff

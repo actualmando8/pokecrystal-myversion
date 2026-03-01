@@ -158,4 +158,9 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw DoBurn
+	dw AttackSpeedUp
+	dw CloseCombat
+	dw StealthRock
+	dw KnockOff
 	assert_table_length NUM_MOVE_EFFECTS

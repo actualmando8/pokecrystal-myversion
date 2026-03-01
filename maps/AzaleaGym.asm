@@ -15,6 +15,8 @@ AzaleaGym_MapScripts:
 AzaleaGymBugsyScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .FightDone
 	writetext BugsyText_INeverLose
@@ -45,6 +47,20 @@ AzaleaGymBugsyScript:
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext BugsyRematchText
+	waitbutton
+	closetext
+	winlosstext BugsyRematchWinText, 0
+	loadtrainer BUGSY, BUGSY2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BugsyRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -228,6 +244,42 @@ BugsyText_BugMonsAreDeep:
 
 	para "Study your favor-"
 	line "ites thoroughly."
+	done
+
+BugsyRematchText:
+	text "BUGSY: Whoa! It's"
+	line "the CHAMPION!"
+
+	para "My research on bug"
+	line "#MON has made"
+	cont "huge progress!"
+
+	para "I've discovered"
+	line "new training"
+	cont "methods!"
+
+	para "Let me demonstrate"
+	line "what I've learned!"
+	cont "I won't lose!"
+	done
+
+BugsyRematchWinText:
+	text "Whoa, amazing!"
+	line "You're incredible!"
+	done
+
+BugsyRematchAfterText:
+	text "BUGSY: You're an"
+	line "expert on #MON!"
+
+	para "My research still"
+	line "isn't complete."
+
+	para "But I'll keep"
+	line "studying to become"
+
+	para "the authority on"
+	line "bug #MON!"
 	done
 
 BugCatcherBennySeenText:

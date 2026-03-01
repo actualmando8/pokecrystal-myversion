@@ -10,12 +10,26 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_RIVAL
 
 IlexForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback
+	callback MAPCALLBACK_OBJECTS, IlexForestRivalCallback
+
+IlexForestRivalCallback:
+	checkevent EVENT_BEAT_RIVAL_IN_ILEX_FOREST
+	iftrue .NoRival
+	checkevent EVENT_CLEARED_SLOWPOKE_WELL
+	iffalse .NoRival
+	appear ILEXFOREST_RIVAL
+	endcallback
+
+.NoRival:
+	disappear ILEXFOREST_RIVAL
+	endcallback
 
 IlexForestFarfetchdCallback:
 	checkevent EVENT_GOT_HM01_CUT
@@ -399,6 +413,37 @@ TrainerBugCatcherWayne:
 IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
 
+IlexForestRivalScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_RIVAL_IN_ILEX_FOREST
+	iftrue .AfterBattle
+	writetext IlexForestRivalBeforeText
+	waitbutton
+	closetext
+	winlosstext IlexForestRivalWinText, 0
+	readvar VAR_STARTER_CHOICE
+	ifequal STARTER_CHIKORITA, .Totodile
+	ifequal STARTER_CYNDAQUIL, .Chikorita
+	; Cyndaquil
+	loadtrainer RIVAL1, RIVAL1_9
+	sjump .StartBattle
+.Totodile:
+	loadtrainer RIVAL1, RIVAL1_8
+	sjump .StartBattle
+.Chikorita:
+	loadtrainer RIVAL1, RIVAL1_7
+.StartBattle:
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_RIVAL_IN_ILEX_FOREST
+	opentext
+.AfterBattle:
+	writetext IlexForestRivalAfterText
+	waitbutton
+	closetext
+	end
+
 IlexForestRevive:
 	itemball REVIVE
 
@@ -419,6 +464,9 @@ IlexForestHiddenSuperPotion:
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
+
+IlexForestTMBugBuzz:
+	hiddenitem TM_BUG_BUZZ, EVENT_GOT_TM64_BUG_BUZZ
 
 IlexForestBoulder: ; unreferenced
 	jumpstd StrengthBoulderScript
@@ -924,14 +972,43 @@ BugCatcherWayneBeatenText:
 BugCatcherWayneAfterBattleText:
 	text "A #MON I've"
 	line "never seen before"
-
-	para "fell out of the"
-	line "tree when I used"
+	cont "fell out of a"
+	cont "tree when I used"
 	cont "HEADBUTT."
 
 	para "I ought to use"
 	line "HEADBUTT in other"
 	cont "places too."
+	done
+
+IlexForestRivalBeforeText:
+	text "…"
+
+	para "I heard you beat"
+	line "TEAM ROCKET in"
+	cont "AZALEA."
+
+	para "Whatever."
+
+	para "My #MON are"
+	line "getting stronger."
+
+	para "I'll show you!"
+	done
+
+IlexForestRivalWinText:
+	text "…Tch!"
+	done
+
+IlexForestRivalAfterText:
+	text "…You're still"
+	line "strong."
+
+	para "But I'm getting"
+	line "stronger too."
+
+	para "I'll beat you"
+	line "next time!"
 	done
 
 IlexForest_MapEvents:
@@ -963,3 +1040,4 @@ IlexForest_MapEvents:
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 13, 28, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestRivalScript, EVENT_ILEX_FOREST_RIVAL

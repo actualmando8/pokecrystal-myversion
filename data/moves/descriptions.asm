@@ -252,20 +252,32 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw MoonblastDescription
+	dw PlayRoughDescription
+	dw DazzlingGleamDescription
+	dw DrainingKissDescription
+	dw FairyWindDescription
+	dw DisarmingVoiceDescription
+	dw FlowerShieldDescription
+	dw FairyLockDescription
+	dw BabyDollEyesDescription
+	dw WillOWispDescription
+	dw DragonDanceDescription
+	dw CloseCombatDescription
+	dw BraveBirdDescription
+	dw ScaldDescription
+	dw UTurnDescription
+	dw StealthRockDescription
+	dw KnockOffDescription
+	dw ShadowClawDescription
+	dw DarkPulseDescription
+	dw FlashCannonDescription
+	dw DragonPulseDescription
+	dw BugBuzzDescription
+	dw IcicleCrashDescription
+	dw SludgeWaveDescription
+	dw PoisonJabDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
-	dw MoveFFDescription
-	dw Move00Description
-	assert_table_length $100
-
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
-MoveFFDescription:
-Move00Description:
-	db "?@"
 
 PoundDescription:
 	db   "Pounds with fore-"
@@ -1270,3 +1282,103 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+MoonblastDescription:
+	db   "May lower foe's"
+	next "SP. ATK.@"
+
+PlayRoughDescription:
+	db   "May lower foe's"
+	next "ATTACK.@"
+
+DazzlingGleamDescription:
+	db   "Damages all foes"
+	next "with light.@"
+
+DrainingKissDescription:
+	db   "Drains half the"
+	next "damage dealt.@"
+
+FairyWindDescription:
+	db   "Strikes with a"
+	next "fairy wind.@"
+
+DisarmingVoiceDescription:
+	db   "Never misses the"
+	next "target.@"
+
+FlowerShieldDescription:
+	db   "Raises DEFENSE of"
+	next "grass #MON.@"
+
+FairyLockDescription:
+	db   "Prevents fleeing"
+	next "next turn.@"
+
+BabyDollEyesDescription:
+	db   "Lowers foe's"
+	next "ATTACK.@"
+
+WillOWispDescription:
+	db   "Inflicts a burn"
+	next "on the foe.@"
+
+DragonDanceDescription:
+	db   "Raises ATTACK and"
+	next "SPEED.@"
+
+CloseCombatDescription:
+	db   "Powerful, lowers"
+	next "defenses.@"
+
+BraveBirdDescription:
+	db   "Strong, but user"
+	next "takes damage.@"
+
+ScaldDescription:
+	db   "May burn the"
+	next "foe.@"
+
+UTurnDescription:
+	db   "Attacks, then"
+	next "switches out.@"
+
+StealthRockDescription:
+	db   "Hurts foes when"
+	next "they switch in.@"
+
+KnockOffDescription:
+	db   "Knocks off foe's"
+	next "held item.@"
+
+ShadowClawDescription:
+	db   "High critical hit"
+	next "ratio.@"
+
+DarkPulseDescription:
+	db   "May make the foe"
+	next "flinch.@"
+
+FlashCannonDescription:
+	db   "May lower foe's"
+	next "SP. DEF.@"
+
+DragonPulseDescription:
+	db   "Powerful dragon"
+	next "energy blast.@"
+
+BugBuzzDescription:
+	db   "May lower foe's"
+	next "SP. DEF.@"
+
+IcicleCrashDescription:
+	db   "May make the foe"
+	next "flinch.@"
+
+SludgeWaveDescription:
+	db   "May poison the"
+	next "foe.@"
+
+PoisonJabDescription:
+	db   "May poison the"
+	next "foe.@"

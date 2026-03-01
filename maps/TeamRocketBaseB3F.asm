@@ -217,6 +217,9 @@ TeamRocketBaseB3FIceHeal:
 TeamRocketBaseB3FUltraBall:
 	itemball ULTRA_BALL
 
+TeamRocketBaseB3FTMDarkPulse:
+	itemball TM_DARK_PULSE
+
 RocketBaseLanceApproachesPlayerMovement:
 	step RIGHT
 	step_end

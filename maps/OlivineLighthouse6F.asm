@@ -64,6 +64,16 @@ OlivineLighthouseJasmine:
 	opentext
 	writetext JasmineThankYouText
 	waitbutton
+	checkevent EVENT_GOT_TM58_SCALD
+	iftrue .GotScald
+	promptbutton
+	verbosegiveitem TM_SCALD
+	iffalse .NoRoomForScald
+	setevent EVENT_GOT_TM58_SCALD
+	writetext JasmineScaldSpeech
+	waitbutton
+.GotScald:
+.NoRoomForScald:
 	closetext
 	setevent EVENT_JASMINE_RETURNED_TO_GYM
 	clearevent EVENT_OLIVINE_GYM_JASMINE
@@ -230,6 +240,15 @@ JasmineThankYouText:
 
 	para "…I will return to"
 	line "the GYM…"
+	done
+
+JasmineScaldSpeech:
+	text "…Please take this"
+	line "TM as thanks…"
+	
+	para "It's SCALD… A"
+	line "WATER move that"
+	cont "can burn…"
 	done
 
 JasmineISeeText:

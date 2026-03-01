@@ -119,6 +119,9 @@ BurnedTowerB1FEusine:
 BurnedTowerB1FTMEndure:
 	itemball TM_ENDURE
 
+BurnedTowerB1FTMWillOWisp:
+	hiddenitem TM_WILL_O_WISP, EVENT_GOT_TM57_WILL_O_WISP
+
 BurnedTowerB1FBoulder:
 	jumpstd StrengthBoulderScript
 

@@ -12,6 +12,8 @@ VioletGym_MapScripts:
 VioletGymFalknerScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_RISINGBADGE
+	iftrue .Rematch
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
 	writetext FalknerIntroText
@@ -42,6 +44,20 @@ VioletGymFalknerScript:
 	iffalse .NoRoomForMudSlap
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext FalknerTMMudSlapText
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	writetext FalknerRematchText
+	waitbutton
+	closetext
+	winlosstext FalknerRematchWinText, 0
+	loadtrainer FALKNER, FALKNER2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext FalknerRematchAfterText
 	waitbutton
 	closetext
 	end
@@ -205,6 +221,43 @@ FalknerFightDoneText:
 
 	para "the greatest bird"
 	line "master!"
+	done
+
+FalknerRematchText:
+	text "FALKNER: I heard"
+	line "you conquered the"
+	cont "ELITE FOUR."
+
+	para "Since our battle,"
+	line "I've trained my"
+
+	para "cherished bird"
+	line "#MON without"
+	cont "rest."
+
+	para "I'll show you the"
+	line "true magnificence"
+
+	para "of bird #MON!"
+	line "Prepare yourself!"
+	done
+
+FalknerRematchWinText:
+	text "…Magnificent."
+	line "You've mastered"
+	cont "your craft."
+	done
+
+FalknerRematchAfterText:
+	text "FALKNER: Your"
+	line "skill is genuine."
+
+	para "I will continue"
+	line "to train so that"
+
+	para "my bird #MON"
+	line "can soar even"
+	cont "higher!"
 	done
 
 BirdKeeperRodSeenText:

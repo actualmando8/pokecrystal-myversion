@@ -12,12 +12,26 @@
 	const ROUTE34_COOLTRAINER_F2
 	const ROUTE34_COOLTRAINER_F3
 	const ROUTE34_POKE_BALL
+	const ROUTE34_RIVAL
 
 Route34_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
+	callback MAPCALLBACK_OBJECTS, Route34RivalCallback
+
+Route34RivalCallback:
+	checkevent EVENT_BEAT_RIVAL_IN_ROUTE_34
+	iftrue .NoRival
+	checkevent EVENT_BEAT_RIVAL_IN_ILEX_FOREST
+	iffalse .NoRival
+	appear ROUTE34_RIVAL
+	endcallback
+
+.NoRival:
+	disappear ROUTE34_RIVAL
+	endcallback
 
 Route34EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -473,6 +487,37 @@ TrainerCooltrainerfKate:
 Route34IlexForestSign: ; unreferenced
 	jumptext Route34IlexForestSignText
 
+Route34RivalScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_RIVAL_IN_ROUTE_34
+	iftrue .AfterBattle
+	writetext Route34RivalBeforeText
+	waitbutton
+	closetext
+	winlosstext Route34RivalWinText, 0
+	readvar VAR_STARTER_CHOICE
+	ifequal STARTER_CHIKORITA, .Totodile
+	ifequal STARTER_CYNDAQUIL, .Chikorita
+	; Cyndaquil
+	loadtrainer RIVAL1, RIVAL1_12
+	sjump .StartBattle
+.Totodile:
+	loadtrainer RIVAL1, RIVAL1_11
+	sjump .StartBattle
+.Chikorita:
+	loadtrainer RIVAL1, RIVAL1_10
+.StartBattle:
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_RIVAL_IN_ROUTE_34
+	opentext
+.AfterBattle:
+	writetext Route34RivalAfterText
+	waitbutton
+	closetext
+	end
+
 Route34Sign:
 	jumptext Route34SignText
 
@@ -758,6 +803,36 @@ DayCareSignText:
 	line "#MON FOR YOU!"
 	done
 
+Route34RivalBeforeText:
+	text "…"
+
+	para "You again?"
+
+	para "There's no point"
+	line "in fighting you."
+
+	para "My #MON have"
+	line "gotten a lot"
+	cont "tougher."
+
+	para "I'll prove it!"
+	done
+
+Route34RivalWinText:
+	text "…Humph!"
+	done
+
+Route34RivalAfterText:
+	text "…You keep getting"
+	line "in my way."
+
+	para "But I'm not going"
+	line "to lose next time."
+
+	para "I'll show you how"
+	line "strong I've become!"
+	done
+
 Route34_MapEvents:
 	db 0, 0 ; filler
 
@@ -791,3 +866,4 @@ Route34_MapEvents:
 	object_event  3, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
 	object_event  6, 51, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
 	object_event  7, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route34Nugget, EVENT_ROUTE_34_NUGGET
+	object_event 13, 13, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route34RivalScript, EVENT_ROUTE_34_RIVAL
